@@ -1,0 +1,4 @@
+Im doing:
+https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/authentication-apprentice/authentication/authentication-vulnerabilities
+
+have to make reports for previous
