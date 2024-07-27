@@ -18,7 +18,7 @@ To solve the lab, enumerate a valid username, brute-force this user's password, 
 1. __Ready your environment:__
 
     1. Launch your http proxy instance.
-    1. Make sure its viewing the trafic as you navigate th page.
+    1. Make sure its viewing the trafic as you navigate the page.
     1. Save the wordlists into separate files in your filesystem.
 
 1. __Find the apropriate request:__

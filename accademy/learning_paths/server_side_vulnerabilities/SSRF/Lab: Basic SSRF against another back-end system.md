@@ -1,12 +1,12 @@
-# Lab: Basic SSRF against the local server
+# Lab: Basic SSRF against another back-end system
 
 ## Description
 
 This lab has a stock check feature which fetches data from an internal system.
 
-To solve the lab, change the stock check URL to access the admin interface at <http://localhost/admin> and delete the user carlos.
+To solve the lab, use the stock check functionality to scan the internal ```192.168.0.X``` range for an admin interface on port 8080, then use it to delete the user carlos.
 
-[ACCESS LAB](<https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/ssrf-apprentice/ssrf/lab-basic-ssrf-against-localhost#>)
+[ACCESS LAB](<https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/ssrf-apprentice/ssrf/lab-basic-ssrf-against-backend-system#>)
 
 ## Solution
 
@@ -26,9 +26,19 @@ To solve the lab, change the stock check URL to access the admin interface at <h
     1. Send that request to the section of your tool that lets you modify and resend requests.
     1. The original payload is:
         > stockApi=http%3A%2F%2Fstock.weliketoshop.net%3A8080%2Fproduct%2Fstock%2Fcheck%3FproductId%3D2%26storeId%3D1
-    1. Change the payload to:
-        > stockApi=<http://localhost/admin>.
-    1. Send it.
+    1. Send the request to the request automation section of your tool.
+
+1. __Scan for the IP where the service runs:__
+
+    1. Craft the ayload to look like this:
+        > stockApi=<http://192.168.0.X:8080/admin>.
+    1. Mark "X" to be replaced each request by what the file ip_octet_wordlist.txt contains.
+    1. Start the attack.
+
+1. __Look for the successful request:__
+
+    1. Find the request that responded with status code __200__.
+    1. Send this request to the section of your tool that allows modifying the requests and resend.
 
 1. __Analize the response:__
 
@@ -36,5 +46,5 @@ To solve the lab, change the stock check URL to access the admin interface at <h
     ```<a href="/admin/delete?username=carlos">Delete</a>```.
     This reveals the actual api call to delete a user.
     1. Change the payload to:
-        > stockApi=http:localhost/admin/delete?username=carlos
+        > stockApi=http:[THE_IP_YOU_COPIED]/admin/delete?username=carlos
     1. Hit send and refresh the page to solve the lab.
