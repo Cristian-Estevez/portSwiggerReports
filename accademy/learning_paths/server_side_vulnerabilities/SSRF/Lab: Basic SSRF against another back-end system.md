@@ -32,7 +32,7 @@ To solve the lab, use the stock check functionality to scan the internal ```192.
 
     1. Craft the ayload to look like this:
         > stockApi=<http://192.168.0.X:8080/admin>.
-    1. Mark "X" to be replaced each request by what the file ip_octet_wordlist.txt contains.
+    1. Mark "X" to be replaced each request by what the file ./ip_octet_wordlist.txt contains.
     1. Start the attack.
 
 1. __Look for the successful request:__
