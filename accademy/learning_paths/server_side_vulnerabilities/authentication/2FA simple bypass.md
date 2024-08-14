@@ -7,12 +7,12 @@ This lab's two-factor authentication can be bypassed. You have already obtained 
 - Your credentials: wiener:peter
 - Victim's credentials carlos:montoya
 
-[ACCESS LAB](<https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/authentication-apprentice/authentication/multi-factor/lab-2fa-simple-bypass#>)
+[ACCESS LAB](https://portswigger.net/web-security/learning-paths/server-side-vulnerabilities-apprentice/authentication-apprentice/authentication/multi-factor/lab-2fa-simple-bypass#)
 
 ## Solution
 
-1. Navigate to "my account"
+1. Navigate to "My account"
 1. Enter victims credentials.
-1. When prompted for the 2FA code go to the url bar in the browser and delete from the path "login2"
+1. When prompted for the 2FA code go to the url bar in the browser and delete from the path the word `login2`
 1. At this point you are already logged in as the victim.
-1. Click "My account to solve the lab"
+1. Click "My account" to solve the lab
